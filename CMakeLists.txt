@@ -22,28 +22,21 @@ find_package(Qt6 COMPONENTS Network REQUIRED)
 find_package(Qt6 COMPONENTS StateMachine REQUIRED)
 find_package(Qt6 REQUIRED COMPONENTS Sql)
 
-
-# 设置翻译文件
-set(TS_FILES yuri_zh_CN.ts)
+# 全局包含头文件
 INCLUDE_DIRECTORIES(
     ${PROJECT_SOURCE_DIR}
 )
 
-# 添加两个自项目
-# add_subdirectory(lib/system_login)
-# add_subdirectory(lib/my_table)
-
-file(GLOB SRC_FILE ${PROJECT_SOURCE_DIR}/src/*.cpp)
 file(GLOB HEAD_FILE ${PROJECT_SOURCE_DIR}/include/*.h)
+file(GLOB SRC_FILE ${PROJECT_SOURCE_DIR}/src/*.cpp)
 file(GLOB UI_FILE ${PROJECT_SOURCE_DIR}/ui/*.ui)
 file(GLOB QRC_FILE ${PROJECT_SOURCE_DIR}/qrc/*.qrc)
 
-set(LIB_FILES ${TS_FILES} ${SRC_FILE} ${HEAD_FILE} ${UI_FILE} ${QRC_FILE} )
+set(LIB_FILES ${HEAD_FILE} ${SRC_FILE}  ${UI_FILE} ${QRC_FILE} )
 
 # 添加项目文件
 set(PROJECT_SOURCES
     main.cpp
-    ${TS_FILES}
     ${LIB_FILES}
 )
 
@@ -74,8 +67,3 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 else()
     message("QT version is less 6")
 endif()
-
-
-
-
-

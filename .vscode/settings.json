@@ -91,7 +91,7 @@
         "-std=c++20"
     ],
     "liveServer.settings.port": 5501,
-    "cmake.sourceDirectory": "/home/yuri/learn/服务器开发实践/网络编程/practise/websocket",
+    "cmake.sourceDirectory": "/home/yuri/love/qt6_init",
     // 头部注释
     "fileheader.customMade": {
         // Author字段是文件的创建者 可以在specialOptions中更改特殊属性
