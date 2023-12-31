@@ -6,7 +6,7 @@ project(yuri VERSION 0.1 LANGUAGES CXX)
 # pacman -S mingw-w64-x86_64-qt6
 # pacman -S mingw-w64-x86_64-cmake
 
-set(CMAKE_PREFIX_PATH "C:\\msys64\\mingw64\\lib\\cmake") # qt库目录
+# set(CMAKE_PREFIX_PATH "C:\\msys64\\mingw64\\lib\\cmake") # qt库目录
 
 set(CMAKE_AUTOUIC ON) # 自动编译ui文件
 set(CMAKE_AUTOMOC ON) # 自动编译moc文件
@@ -47,7 +47,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
     )
-    qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
+    qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR})
     # 链接文件
     target_link_libraries(${PROJECT_NAME} PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
     target_link_libraries(${PROJECT_NAME} PRIVATE Qt6::Sql)
